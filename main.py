@@ -1,3 +1,20 @@
+def check_dtype_support(dtype):
+    try:
+        torch.tensor(1, dtype=dtype, device=device)
+        # print('sukses bro')
+        return True
+    except TypeError:
+        # print('ada error bro')
+        return False
+
+# Check support for float64
+supports_float64 = check_dtype_support(torch.float64)
+print(f"Float64 support: {supports_float64}")
+
+# Check support for float32
+supports_float32 = check_dtype_support(torch.float32)
+print(f"Float32 support: {supports_float32}")
+
 def simple_fx(x):
     if(check_dtype_support(torch.float64)):
         # x = torch.tensor(x, dtype=torch.float64, device=device)
