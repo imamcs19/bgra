@@ -1,3 +1,49 @@
+def simple_fx(x):
+    if(check_dtype_support(torch.float64)):
+        # x = torch.tensor(x, dtype=torch.float64, device=device)
+        x.to(torch.float64)
+        # x_in = torch.tensor(x,device = device)
+        pass
+    else:
+        # x = x.astype('float32')
+        # x = torch.tensor(x, dtype=torch.float32, device=device)
+        x.to(torch.float32)
+        # x_in = torch.tensor(x,device = device)
+    # print(x)
+    # hasil = -np.power(x,2) + 14*x - 13
+    # print(hasil)
+    # return -hasil
+    # return -(np.sum(-np.power(x,2) + 14*np.array(x) - 13))
+    
+    #     if x.dim() == 1:
+    #       x = x.unsqueeze(0)
+    #     dim = x.size(dim=-1)
+
+    #     hasil = (-torch.pow(x[:,0],2) + 14*x[:,0] - 13).reshape(-1, 1)
+    #     return -hasil
+    
+    #if device in ('cuda', 'cpu'):
+    #    # bounds = torch.tensor(bounds, device = set_device)
+    #    # min_bounds = torch.tensor(min_bounds, device = set_device)
+    #    # max_bounds = torch.tensor(max_bounds, device = set_device)
+    #    # x_in = torch.tensor(x,device = device)
+    #    pass
+    #elif device == 'mps':
+    #    # bounds = np.asarray(bounds, dtype=np.float32)
+    #    # min_bounds = np.asarray(min_bounds, dtype=np.float32)
+    #   # max_bounds = np.asarray(max_bounds, dtype=np.float32)
+
+    #    # atau dengan
+
+    #    # x = x.astype('float32')
+
+     #   x_in = torch.tensor(x, device = device)
+    
+    # return -(torch.sum(-torch.pow(x_in[:,0],2) + 14*x_in[:,0] - 13))
+    # return -(-torch.pow(x_in[:,0],2) + 14*x_in[:,0] - 13)
+    # return -(-torch.pow(x[:,0],2) + 14*x[:,0] - 13).reshape(-1, 1)
+    return -(-torch.pow(x[:,0],2) + 14*x[:,0] - 13)
+
 # Function to perform experiments and save results
 # def run_experiments(test_functions, optimization_algorithms, bounds):
 def run_experiments(test_functions, optimization_algorithms, bounds_test_functions):
